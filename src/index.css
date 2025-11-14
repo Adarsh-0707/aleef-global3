@@ -359,3 +359,21 @@ button:hover {
     transform: none !important;
   }
 }
+/* Mobile */
+.banner-wrapper {
+  height: 220px;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+  .banner-wrapper {
+    height: 320px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .banner-wrapper {
+    height: 420px;
+  }
+}
