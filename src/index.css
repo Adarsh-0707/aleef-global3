@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+.card-glass {
+  @apply bg-card/70 backdrop-blur border border-white/10 rounded-2xl shadow-lgx;
+}
+.btn-primary-gradient {
+  background: linear-gradient(135deg, #12b3ff 0%, #6ee7ff 100%);
+  color: #0d0f13;
+}
+.section {
+  @apply py-12 md:py-20;
+}
+.section-title {
+  @apply text-2xl md:text-4xl font-semibold tracking-tight;
+}
+.lead {
+  @apply text-white/70;
+}
+.nav-blur {
+  @apply bg-dark/80 backdrop-blur border-b border-white/10;
+}
+a {
+  @apply hover:opacity-90 transition;
+}
+
+*,
+*::before,
+*::after {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    transform 0.38s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.32s ease,
+    opacity 0.32s ease, border-color 0.32s ease;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body > main {
+  animation: pageFadeIn 0.55s ease both;
+}
+@keyframes pageFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.max-w-6xl > *,
+.container-xl > * {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: sectionFadeUp 0.6s ease forwards;
+}
+
+.max-w-6xl > *:nth-child(1),
+.container-xl > *:nth-child(1) {
+  animation-delay: 0.04s;
+}
+.max-w-6xl > *:nth-child(2),
+.container-xl > *:nth-child(2) {
+  animation-delay: 0.08s;
+}
+.max-w-6xl > *:nth-child(3),
+.container-xl > *:nth-child(3) {
+  animation-delay: 0.12s;
+}
+.max-w-6xl > *:nth-child(4),
+.container-xl > *:nth-child(4) {
+  animation-delay: 0.16s;
+}
+.max-w-6xl > *:nth-child(5),
+.container-xl > *:nth-child(5) {
+  animation-delay: 0.2s;
+}
+.max-w-6xl > *:nth-child(6),
+.container-xl > *:nth-child(6) {
+  animation-delay: 0.24s;
+}
+
+@keyframes sectionFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.relative.mx-auto.max-w-\[1200px\] {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: heroContainerIn 0.62s ease forwards;
+  animation-delay: 0.06s;
+}
+@keyframes heroContainerIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.relative.mx-auto.max-w-\[1200px\] > img:nth-of-type(1) {
+  opacity: 0;
+  transform: translateY(14px) translateX(6px) scale(0.995);
+  animation: heroBackIn 0.8s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  animation-delay: 0.12s;
+  will-change: transform, filter, opacity;
+  filter: drop-shadow(20px 20px 5px rgba(54, 54, 52, 0.6));
+}
+@keyframes heroBackFloat {
+  0% {
+    transform: translateY(14px) translateX(6px) scale(0.995);
+  }
+  50% {
+    transform: translateY(8px) translateX(10px) scale(0.997);
+  }
+  100% {
+    transform: translateY(14px) translateX(6px) scale(0.995);
+  }
+}
+
+.relative.mx-auto.max-w-\[1200px\] > img:nth-of-type(1).float-start {
+  animation: heroBackFloat 10s ease-in-out infinite 0.9s;
+}
+
+.relative.mx-auto.max-w-\[1200px\] > img:nth-of-type(2) {
+  opacity: 0;
+  transform: translateY(18px) scale(0.995);
+  animation: heroFrontIn 0.72s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  animation-delay: 0.18s;
+  will-change: transform, box-shadow;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.45);
+}
+@keyframes heroFrontIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.relative.mx-auto.max-w-\[1200px\] > .absolute.inset-0 {
+  opacity: 0;
+  animation: heroOverlayIn 0.5s ease forwards;
+  animation-delay: 0.14s;
+}
+@keyframes heroOverlayIn {
+  to {
+    opacity: 1;
+  }
+}
+
+.relative.mx-auto.max-w-\[1200px\] > .absolute.left-6 {
+  opacity: 0;
+  transform: translateX(-12px) translateY(6px);
+  animation: heroTextIn 0.62s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+  animation-delay: 0.24s;
+}
+@keyframes heroTextIn {
+  to {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .relative.mx-auto.max-w-\[1200px\]:hover > img:nth-of-type(2) {
+    transform: translateY(-6px) scale(1.01) rotate(-0.35deg);
+    box-shadow: 0 28px 60px rgba(0, 0, 0, 0.48);
+  }
+  .relative.mx-auto.max-w-\[1200px\]:hover > img:nth-of-type(1) {
+    transform: translateY(6px) translateX(12px) scale(1.001);
+    filter: drop-shadow(22px 22px 8px rgba(54, 54, 52, 0.7));
+  }
+  .relative.mx-auto.max-w-\[1200px\] > .absolute.left-6:hover h1 {
+    transform: translateY(-6px) scale(1.01);
+  }
+}
+
+.max-w-6xl .bg-black {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: statsWrapIn 0.6s ease forwards;
+  animation-delay: 0.12s;
+}
+@keyframes statsWrapIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.max-w-6xl .bg-black .grid > div {
+  opacity: 0;
+  transform: translateY(12px) scale(0.995);
+  animation: statsItemIn 0.56s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+.max-w-6xl .bg-black .grid > div:nth-child(1) {
+  animation-delay: 0.08s;
+}
+.max-w-6xl .bg-black .grid > div:nth-child(2) {
+  animation-delay: 0.14s;
+}
+.max-w-6xl .bg-black .grid > div:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+@keyframes statsItemIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.max-w-6xl .bg-black .grid > div .relative > div[aria-hidden] {
+  animation: shineMove 5s linear infinite;
+  will-change: transform, opacity;
+}
+@keyframes shineMove {
+  0% {
+    transform: translateX(-8%) rotate(-2deg);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateX(8%) rotate(-2deg);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateX(-8%) rotate(-2deg);
+    opacity: 0.5;
+  }
+}
+
+.max-w-6xl .bg-black .grid > div:hover .relative {
+  transform: translateY(-10px);
+  box-shadow: 0 28px 52px rgba(2, 6, 23, 0.22);
+}
+
+.max-w-6xl .bg-black .grid > div:hover .font-extrabold {
+  transform: scale(1.05);
+}
+
+.container-xl .row.g-3 img.w-100 {
+  opacity: 0;
+  transform: translateY(12px) scale(0.997);
+  animation: thumbIn 0.55s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+.container-xl .row.g-3 img.w-100:nth-of-type(1) {
+  animation-delay: 0.08s;
+}
+.container-xl .row.g-3 img.w-100:nth-of-type(2) {
+  animation-delay: 0.12s;
+}
+.container-xl .row.g-3 img.w-100:nth-of-type(3) {
+  animation-delay: 0.16s;
+}
+@keyframes thumbIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.container-xl section .card {
+  transform-origin: center;
+  opacity: 0;
+  transform: translateY(12px) scale(0.997);
+  animation: offerCardIn 0.56s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+.container-xl section .card:nth-child(1) {
+  animation-delay: 0.08s;
+}
+.container-xl section .card:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.container-xl section .card:nth-child(3) {
+  animation-delay: 0.16s;
+}
+
+@keyframes offerCardIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.container-xl section .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 24px 48px rgba(2, 6, 23, 0.12);
+}
+
+.container-xl section .card:hover [style*="position: absolute"] {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(11, 18, 32, 0.16);
+}
+
+.container-xl .rounded-3 img[style*="width: 100%"],
+.container-xl .rounded-3 img[src*="reza"],
+.container-xl .rounded-3 img[src*="Fahad"],
+.container-xl .rounded-3 img[src*="Mukhtar"] {
+  will-change: transform, box-shadow;
+  transition: transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease;
+}
+.container-xl .row.g-4 .rounded-3 img {
+  transform-origin: center;
+  animation: avatarPopIn 0.6s ease forwards;
+  opacity: 0;
+  transform: translateY(10px) scale(0.99);
+}
+.container-xl .row.g-4 .rounded-3 img:nth-child(1) {
+  animation-delay: 0.12s;
+}
+@keyframes avatarPopIn {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.container-xl .row.g-4 .rounded-3 img:hover {
+  transform: translateY(-10px) scale(1.04);
+  box-shadow: 0 16px 40px rgba(2, 6, 23, 0.18);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  transition: transform 0.36s cubic-bezier(0.22, 1, 0.36, 1), color 0.28s ease;
+}
+h1:hover,
+h2:hover,
+h3:hover {
+  transform: translateY(-6px) scale(1.01);
+}
+
+a,
+button {
+  transition: color 0.28s ease, background 0.28s ease, transform 0.28s ease,
+    box-shadow 0.28s ease;
+}
+a:hover,
+button:hover {
+  transform: translateY(-2px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+}
