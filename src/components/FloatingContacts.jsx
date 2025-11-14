@@ -4,7 +4,7 @@ export default function FloatingContacts() {
   const whatsappHref =
     "https://api.whatsapp.com/send?phone=919846545949&text=Hello%20Aleef%20Global%20Team!%20I%20would%20like%20to%20know%20more%20about%20your%20services.";
   const emailHref =
-    "https://mail.google.com/mail/?view=cm&fs=1&to=info@aleefglobal.com";
+    "mailto:info@aleefglobal.com?subject=Inquiry%20from%20Website&body=Hello%20Aleef%20Global%20Team,";
 
   return (
     <div

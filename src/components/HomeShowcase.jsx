@@ -153,14 +153,27 @@ export default function HomeShowcase() {
       </motion.div>
 
       {/* three image row */}
-      <motion.div className="row g-3" variants={container}>
-        {[thumb1, thumb2, thumb3].map((src, i) => (
-          <motion.div key={i} className="col-12 col-md-4" variants={fadeUp}>
-            <motion.img src={src} alt="" className="w-100 rounded-3 object-cover" style={{ height: 260 }}
-              whileHover={!reduceMotion ? { scale: 1.04, y: -6 } : {}} transition={{ type: "spring", stiffness: 110, damping: 14 }} />
-          </motion.div>
-        ))}
-      </motion.div>
+<motion.div className="row g-3" variants={container}>
+  {[thumb1, thumb2, thumb3].map((src, i) => (
+    <motion.div key={i} className="col-12 col-md-4" variants={fadeUp}>
+      <div
+        className="w-100 rounded-3 overflow-hidden"
+        style={{
+          height: "180px",       // mobile height
+        }}
+      >
+        <motion.img
+          src={src}
+          alt=""
+          className="w-100 h-100 object-cover"
+          whileHover={!reduceMotion ? { scale: 1.04, y: -6 } : {}}
+          transition={{ type: "spring", stiffness: 110, damping: 14 }}
+        />
+      </div>
+    </motion.div>
+  ))}
+</motion.div>
+
 
       {/* intro text */}
       <motion.div className="text-center" variants={fadeUp}>

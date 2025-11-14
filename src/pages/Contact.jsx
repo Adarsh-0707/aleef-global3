@@ -63,14 +63,13 @@ export default function Contact() {
                     </svg>
                   </div>
                   <div>
-                    <a
-                      href="https://mail.google.com/mail/?view=cm&fs=1&to=info@aleefglobal.com"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-white text-decoration-underline hover:text-white/70"
-                    >
-                      info@aleefglobal.com
-                    </a>
+                  <a
+  href="mailto:info@aleefglobal.com?subject=Inquiry%20from%20Website&body=Hello%20Aleef%20Global%20Team,"
+  className="text-white-70 text-decoration-underline hover:text-white d-inline-block"
+>
+  info@aleefglobal.com
+</a>
+
                   </div>
                 </div>
 
